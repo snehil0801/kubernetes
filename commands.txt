@@ -1,0 +1,38 @@
+gcloud auth login
+gcloud compute ssh gke-snehil-first-cluster-default-pool-bec976f5-0ha9
+gcloud container clusters describe snehil-first-cluster
+gcloud container clusters describe snehil-first-cluster --region asia-east1
+gcloud container clusters describe snehil-first-cluster --region=asia-east1
+gcloud container clusters describe snehil-first-cluster --region=asia-east1|grep -E "(username|password):"
+gcloud container clusters describe snehil-first-cluster --region=asia-east1|grep username
+gcloud container clusters describe snehil-node --region=asia-east-1|grep -E "(username|password):"
+gcloud container clusters describe snehil-node --region=asia-east1|grep -E "(username|password):"
+gcloud container clusters describe snehil-node |grep -E "(username|password):"
+gcloud container clusters describe snehil-node |grep -E (username|password):
+gcloud container clusters get-credentials
+gcloud container clusters get-credentials --help
+gcloud container clusters get-credentials --region asia-east1 --help
+gcloud container clusters get-credentials snehil-first-cluster --region asia-east1
+gcloud contaoner clusters
+gcloud contaoner clusters get-credentials
+gcloud describe container snehil-first-cluster
+kubectl cluster-info
+kubectl cluster-info dump
+kubectl cluster-info|grep dashboard
+kubectl describe pod snehil-node-rc7fs
+kubectl expose rc snehil-node --type=LoadBalancer --name snehil-node-http
+kubectl get --help
+kubectl get -rc,services
+kubectl get all --namespace=kube-system
+kubectl get nodes
+kubectl get pod snehil-node-jthvk -o yaml
+kubectl get pods
+kubectl get pods -o wide
+kubectl get rc
+kubectl get rc,services
+kubectl get services
+kubectl get svc -o wide
+kubectl rc scale snehil-node replicas=3
+kubectl scale rc snehil-node --replicas=2
+kubectl scale rc snehil-node --replicas=3
+kubectl ssh gke-snehil-first-cluster-default-pool-bec976f5-0ha9

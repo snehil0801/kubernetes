@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-06-02T10:14:19Z"
+  name: kubia-public
+  namespace: default
+  resourceVersion: "8426607"
+  selfLink: /api/v1/namespaces/default/services/kubia-public
+  uid: d2738d95-a4b9-11ea-8381-42010a8c0010
+spec:
+  clusterIP: 10.35.242.46
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: kubia
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

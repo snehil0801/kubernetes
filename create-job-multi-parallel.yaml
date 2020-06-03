@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: batch-job
+spec: 
+  completions: 5
+  parallelism: 2
+  template:
+    metadata:
+      name: batch-app-pod
+      labels:
+        app: batch-app
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: batch-app-container
+        image: luksa/batch-job

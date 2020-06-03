@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: ssd-driveer-image
+spec:
+  selector:
+    matchLabels:
+      app: ssd-monitor
+  template:
+    metadata:
+      name: ssd-pods
+      labels:
+        app: ssd-monitor
+    spec:
+      nodeSelector:
+        disk: ssd
+      containers:
+      - name: ssd-app
+        image: luksa/ssd-monitor 

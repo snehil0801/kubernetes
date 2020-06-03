@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubia-public-mine
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+    name: html
+  selector:
+    app: kubia

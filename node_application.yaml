@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snehil-node-yml
+spec:
+  containers:
+  - image: snehil0801/snehil-node
+    name: snehil-node-app-yml
+    ports:
+    - containerPort: 8080
+      protocol: TCP

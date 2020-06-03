@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snehil-node-lable
+  labels:
+    environment: dev
+    creation-method: manual
+spec:
+  containers:
+  - image: snehil0801/snehil-node
+    name: snehil-node
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+ 

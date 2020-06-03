@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: snehil-cron-job
+spec:
+  schedule: "0,15,30,45 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          name: cron-batch
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: cron-job-container
+            image: luksa/batch-job
+        

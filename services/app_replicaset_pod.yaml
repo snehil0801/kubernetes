@@ -1,0 +1,25 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: frontend-app
+spec:
+  selector:
+    matchLabels:
+      app: frontend
+  replicas: 3
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - image: snehil0801/snehil-node
+        name: snehil-node-container
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+        ports:
+        - containerPort: 8080
+          protocol: TCP

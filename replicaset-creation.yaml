@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: snehil-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      key: app
+      #app: snehil-node
+  template:
+    metadata:
+      name: snehil-node-app
+      labels:
+        app: snehil-node
+    spec:
+      containers: 
+      - image: snehil0801/snehil-node
+        name: snehil-node-app
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080 
