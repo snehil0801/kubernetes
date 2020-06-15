@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fortune
+spec:
+  selector:
+    app: deploymentwithinit
+  ports:
+  - port: 80
+    targetPort: 80
+
